@@ -19,17 +19,17 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mse-DQ-fct">
                                 <rect key="frame" x="20" y="44" width="1326" height="940"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D8i-wL-20P" customClass="ImageGalleryView" customModule="ImageGallery" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B01-Mi-4c1" customClass="ImageGalleryView" customModule="ImageGallery" customModuleProvider="target">
                                         <rect key="frame" x="24" y="24" width="1278" height="892"/>
                                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="D8i-wL-20P" secondAttribute="bottom" constant="24" id="6lY-Qz-72s"/>
-                                    <constraint firstItem="D8i-wL-20P" firstAttribute="leading" secondItem="mse-DQ-fct" secondAttribute="leading" constant="24" id="h3I-Zp-h74"/>
-                                    <constraint firstAttribute="trailing" secondItem="D8i-wL-20P" secondAttribute="trailing" constant="24" id="uc7-kn-hhf"/>
-                                    <constraint firstItem="D8i-wL-20P" firstAttribute="top" secondItem="mse-DQ-fct" secondAttribute="top" constant="24" id="vYb-uo-tIl"/>
+                                    <constraint firstAttribute="bottom" secondItem="B01-Mi-4c1" secondAttribute="bottom" constant="24" id="0MB-Mm-9OG"/>
+                                    <constraint firstItem="B01-Mi-4c1" firstAttribute="top" secondItem="mse-DQ-fct" secondAttribute="top" constant="24" id="OiZ-MX-fl6"/>
+                                    <constraint firstItem="B01-Mi-4c1" firstAttribute="leading" secondItem="mse-DQ-fct" secondAttribute="leading" constant="24" id="dB4-4z-xYt"/>
+                                    <constraint firstAttribute="trailing" secondItem="B01-Mi-4c1" secondAttribute="trailing" constant="24" id="uvR-A3-pVT"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -44,6 +44,7 @@
                     </view>
                     <connections>
                         <outlet property="dropZone" destination="mse-DQ-fct" id="UYY-m3-hVQ"/>
+                        <outlet property="imageGalleryView" destination="B01-Mi-4c1" id="318-ut-V4A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
