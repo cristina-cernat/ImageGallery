@@ -9,6 +9,8 @@ import UIKit
 
 class ImageGalleryView: UIView {
 
+    
+
     var backgroundImage: UIImage? {
            didSet {
                setNeedsDisplay()
@@ -17,6 +19,5 @@ class ImageGalleryView: UIView {
     override func draw(_ rect: CGRect) {
         backgroundImage?.draw(in: bounds)
     }
-
 
 }

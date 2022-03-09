@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,7 +22,35 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B01-Mi-4c1" customClass="ImageGalleryView" customModule="ImageGallery" customModuleProvider="target">
                                         <rect key="frame" x="24" y="24" width="1278" height="892"/>
+                                        <subviews>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="q9p-na-Oi7">
+                                                <rect key="frame" x="30" y="30" width="1218" height="832"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="JT0-Ec-hPR">
+                                                    <size key="itemSize" width="128" height="128"/>
+                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                </collectionViewFlowLayout>
+                                                <cells>
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="0v2-lv-qkF">
+                                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ndI-rK-Me5">
+                                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                        </collectionViewCellContentView>
+                                                    </collectionViewCell>
+                                                </cells>
+                                            </collectionView>
+                                        </subviews>
                                         <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="q9p-na-Oi7" secondAttribute="trailing" constant="30" id="0xX-nK-s3G"/>
+                                            <constraint firstItem="q9p-na-Oi7" firstAttribute="leading" secondItem="B01-Mi-4c1" secondAttribute="leading" constant="30" id="C03-gy-lbc"/>
+                                            <constraint firstAttribute="bottom" secondItem="q9p-na-Oi7" secondAttribute="bottom" constant="30" id="VH3-Go-MLg"/>
+                                            <constraint firstItem="q9p-na-Oi7" firstAttribute="top" secondItem="B01-Mi-4c1" secondAttribute="top" constant="30" id="i15-gZ-myY"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -43,6 +72,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="collectionView" destination="q9p-na-Oi7" id="29w-iM-Z7T"/>
                         <outlet property="dropZone" destination="mse-DQ-fct" id="UYY-m3-hVQ"/>
                         <outlet property="imageGalleryView" destination="B01-Mi-4c1" id="318-ut-V4A"/>
                     </connections>

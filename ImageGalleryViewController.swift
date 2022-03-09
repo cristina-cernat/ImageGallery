@@ -10,6 +10,15 @@ import UIKit
 class ImageGalleryViewController: UIViewController, UIDropInteractionDelegate {
 
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        collectionView.delegate = self
+        collectionView.dataSource = self
+
+        collectionView.register(CollectionViewCell.nib(), forCellWithReuseIdentifier: CollectionViewCell.identifier)
+
+    }
 
     @IBOutlet weak var dropZone: UIView! {
         didSet {
@@ -19,6 +28,8 @@ class ImageGalleryViewController: UIViewController, UIDropInteractionDelegate {
 
     
     @IBOutlet weak var imageGalleryView: ImageGalleryView!
+
+    @IBOutlet var collectionView: UICollectionView!
 
 
     func dropInteraction(_ interaction: UIDropInteraction, canHandle session: UIDropSession) -> Bool {
@@ -48,7 +59,32 @@ class ImageGalleryViewController: UIViewController, UIDropInteractionDelegate {
             if let image = images.first as? UIImage {
                 self.imageFetcher.backup = image
             }
-
         }
     }
 }
+
+
+extension UIViewController: UICollectionViewDelegate { // helps pickup interactions with the cells
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+
+        print("You tapped me")
+    }
+}
+
+extension UIViewController: UICollectionViewDataSource {
+
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 12
+    }
+
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCell.identifier, for: indexPath) as! CollectionViewCell
+        cell.configure(with: UIImage(named: "Image")!)
+        return cell
+    }
+}
+
+//extension UIViewController: UICollectionViewDelegateFlowLayout {
+//
+//}
