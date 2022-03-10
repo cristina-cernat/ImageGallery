@@ -13,6 +13,10 @@ class ImageGalleryViewController: UIViewController, UIDropInteractionDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: 120, height: 120)
+        collectionView.collectionViewLayout = layout
+
         collectionView.delegate = self
         collectionView.dataSource = self
 
@@ -85,6 +89,11 @@ extension UIViewController: UICollectionViewDataSource {
     }
 }
 
-//extension UIViewController: UICollectionViewDelegateFlowLayout {
-//
-//}
+extension UIViewController: UICollectionViewDelegateFlowLayout {
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 120, height: 120)
+    }
+
+    
+
+}
