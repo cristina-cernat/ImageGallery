@@ -73,6 +73,7 @@ extension UIViewController: UICollectionViewDelegate { // helps pickup interacti
         collectionView.deselectItem(at: indexPath, animated: true)
 
         print("You tapped me")
+        present(PresentImage(), animated: true)
     }
 }
 
