@@ -35,7 +35,13 @@ class ImageGalleryTableViewController: UITableViewController {
         galleries += ["Gallery ".madeUnique(withRespectTo: galleries)]
         tableView.reloadData()
     }
-    
+
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        if splitViewController?.preferredDisplayMode != .oneOverSecondary {
+            splitViewController?.preferredDisplayMode = .oneOverSecondary
+        }
+    }
 
     /*
     // Override to support conditional editing of the table view.
